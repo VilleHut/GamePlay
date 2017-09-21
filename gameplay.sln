@@ -25,6 +25,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sample-racer", "samples\rac
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lastentarha", "Lastentarha\Lastentarha.vcxproj", "{30BEE126-8B04-4F96-84A1-30CBF8B3E491}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1032BA4B-57EB-4348-9E03-29DD63E80E4A} = {1032BA4B-57EB-4348-9E03-29DD63E80E4A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testing", "testing\testing.vcxproj", "{ADA67F16-E685-4CBD-97C8-88365EBD8CD1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1032BA4B-57EB-4348-9E03-29DD63E80E4A} = {1032BA4B-57EB-4348-9E03-29DD63E80E4A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +77,12 @@ Global
 		{30BEE126-8B04-4F96-84A1-30CBF8B3E491}.DebugMem|x64.Build.0 = DebugMem|x64
 		{30BEE126-8B04-4F96-84A1-30CBF8B3E491}.Release|x64.ActiveCfg = Release|x64
 		{30BEE126-8B04-4F96-84A1-30CBF8B3E491}.Release|x64.Build.0 = Release|x64
+		{ADA67F16-E685-4CBD-97C8-88365EBD8CD1}.Debug|x64.ActiveCfg = Debug|x64
+		{ADA67F16-E685-4CBD-97C8-88365EBD8CD1}.Debug|x64.Build.0 = Debug|x64
+		{ADA67F16-E685-4CBD-97C8-88365EBD8CD1}.DebugMem|x64.ActiveCfg = DebugMem|x64
+		{ADA67F16-E685-4CBD-97C8-88365EBD8CD1}.DebugMem|x64.Build.0 = DebugMem|x64
+		{ADA67F16-E685-4CBD-97C8-88365EBD8CD1}.Release|x64.ActiveCfg = Release|x64
+		{ADA67F16-E685-4CBD-97C8-88365EBD8CD1}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

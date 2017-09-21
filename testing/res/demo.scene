@@ -1,0 +1,49 @@
+scene
+{
+    path = res/lastentarha.gpb
+
+    ambientColor = 1, 1, 1
+
+    node floor
+    {
+        material = res/lastentarha.material#lambert1
+		collisionObject = res/sample.physics#staticBox
+    }
+
+	node camera1
+	{
+	collisionObject = res/sample.physics#camera
+	}
+
+	node wall
+	{
+	material = res/lastentarha.material#wallcolor
+	collisionObject = res/sample.physics#staticBox
+	
+	}
+
+	node roof
+	{
+	material = res/lastentarha.material#roofcolor
+	}
+
+	node door
+	{
+	material = res/lastentarha.material#doorcolor
+	}
+
+	node doorknob
+	{
+	
+	}
+
+	node window
+	{
+	
+	}
+
+    physics
+    {
+        gravity = 0.0, +29.8, 0.0
+    }
+}

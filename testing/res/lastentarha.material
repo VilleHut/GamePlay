@@ -1,0 +1,125 @@
+material colored
+{
+    u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+    
+    renderState
+    {
+        cullFace = true
+        depthTest = true
+    }
+    
+    technique
+    {
+        pass 
+        {
+            vertexShader = res/shaders/colored.vert
+            fragmentShader = res/shaders/colored.frag
+        }
+    }
+}
+
+material textured
+{
+    u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        mipmap = true
+        wrapS = CLAMP
+        wrapT = CLAMP
+        minFilter = LINEAR_MIPMAP_LINEAR
+        magFilter = LINEAR
+    }
+
+    renderState
+    {
+        cullFace = true
+        depthTest = true
+    }
+    
+    technique
+    {
+        pass 
+        {
+            vertexShader = res/shaders/textured.vert
+            fragmentShader = res/shaders/textured.frag
+        }
+    }
+}
+
+material doorcolor : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = res/doorcolor.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material doorknobcolor : colored
+{
+    u_ambientColor = 0.564935, 0.564935, 0.564935
+    u_cameraPosition = CAMERA_WORLD_POSITION
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    u_specularExponent = 2.21303
+    
+    technique
+    {
+        pass 
+        {
+            defines = SPECULAR
+        }
+    }
+}
+
+material lambert1 : textured
+{
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        path = res/seamless.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material roofcolor : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = res/Seamless wall white paint stucco plaster texture.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material wallcolor : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = res/Seamless wall white paint stucco plaster texture.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material windowcolor : colored
+{
+    u_diffuseColor = 0.497758, 0.497758, 0.497758, 1
+    u_specularExponent = 2.15248
+    
+    technique
+    {
+        pass 
+        {
+            defines = SPECULAR
+        }
+    }
+}
+
