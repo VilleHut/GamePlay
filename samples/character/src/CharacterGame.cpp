@@ -41,8 +41,10 @@ void CharacterGame::initialize()
     // Load scene.
     _scene = Scene::load("res/common/sample.scene");
 
+	
+
     // Update the aspect ratio for our scene's camera to match the current device resolution.
-    _scene->getActiveCamera()->setAspectRatio(getAspectRatio());
+   //_scene->getActiveCamera()->setAspectRatio(getAspectRatio());
     
     // Initialize the physics character.
     initializeCharacter();
@@ -101,15 +103,15 @@ void CharacterGame::initializeCharacter()
     _characterNode = node->findNode("boyScale");
     _characterMeshNode = _scene->findNode("boymesh");
     _characterShadowNode = _scene->findNode("boyshadow");
-
+	
     // Get the basketball node.
-    _basketballNode = _scene->findNode("basketball");
+    _basketballNode = _scene->findNode("ball");
     _basketballNode->getCollisionObject()->addCollisionListener(this);
 
     _floorLevel = _basketballNode->getTranslationY();
 
     // Store the alpha material parameter from the character's model.
-    _materialParameterAlpha = dynamic_cast<Model*>(_characterMeshNode->getDrawable())->getMaterial()->getTechniqueByIndex(0)->getPassByIndex(0)->getParameter("u_modulateAlpha");
+   // _materialParameterAlpha = dynamic_cast<Model*>(_characterMeshNode->getDrawable())->getMaterial()->getTechniqueByIndex(0)->getPassByIndex(0)->getParameter("u_modulateAlpha");
 
     // Load character animations.
     _animation = node->getAnimation("animations");
@@ -118,7 +120,7 @@ void CharacterGame::initializeCharacter()
     _jumpClip->addListener(this, _jumpClip->getDuration() - 250);
     _kickClip = _animation->getClip("kick");
     // when to cross fade
-    _kickClip->addListener(this, _kickClip->getDuration() - 250); 
+   _kickClip->addListener(this, _kickClip->getDuration() - 250); 
     // when to turn on _isKicking.
     _kickClip->addListener(this, 416);  
 
@@ -153,6 +155,7 @@ bool CharacterGame::drawScene(Node* node, bool transparent)
 
 void CharacterGame::play(const char* id, bool repeat, float speed)
 {
+	
     AnimationClip* clip = _animation->getClip(id);
 
     // Set clip properties
@@ -179,22 +182,27 @@ void CharacterGame::play(const char* id, bool repeat, float speed)
         clip->play();
     }
     _currentClip = clip;
+	
 }
 
 void CharacterGame::jump()
 {
+	
     if (isOnFloor() && !_kickClip->isPlaying())
     {
         play("jump", false, 0.55f);
         _character->jump(3.0f);
     }
+	
 }
 
 void CharacterGame::kick()
 {
+	
     if (!_jumpClip->isPlaying())
         play("kick", false, 1.75f);
     _kicking = true;
+	
 }
 
 bool CharacterGame::isOnFloor() const
@@ -220,48 +228,11 @@ void CharacterGame::update(float elapsedTime)
     if (!_kickClip->isPlaying())
         _kicking = false;
 
-    if (_gamepad->isButtonDown(Gamepad::BUTTON_A))
-    {
-        if (_buttonPressed[BUTTON_1])
-        {
-            _buttonPressed[BUTTON_1] = false;
-            // Jump while the gamepad button is being pressed
-            jump();
-        }
-    }
-    else
-    {
-        _buttonPressed[BUTTON_1] = true;
-    }
+    
 
-    if (_gamepad->isButtonDown(Gamepad::BUTTON_B))
-    {
-        if (_buttonPressed[BUTTON_2])
-        {
-            _buttonPressed[BUTTON_2] = false;
-            kick();
-        }
-    }
-    else
-    {
-        _buttonPressed[BUTTON_2] = true;
-    }
+    
 
-    _currentDirection.set(Vector2::zero());
-
-    if (!_kicking)
-    {
-        if (_gamepad->getJoystickCount() > 0)
-        {
-            _gamepad->getJoystickValues(0, &_currentDirection);
-        }
-    }
-    if (_gamepad->getJoystickCount() > 1)
-    {
-        Vector2 out;
-        _gamepad->getJoystickValues(1, &out);
-       _character->getNode()->rotateY(-MATH_DEG_TO_RAD(out.x * 2.0f));
-    }
+   
     
     if (_currentDirection.isZero())
     {
@@ -328,7 +299,7 @@ void CharacterGame::update(float elapsedTime)
 
     // Adjust camera to avoid it from being obstructed by walls and objects in the scene.
     adjustCamera(elapsedTime);
-
+	
     // Project the character's shadow node onto the surface directly below him.
     PhysicsController::HitResult hitResult;
     Vector3 v = _character->getNode()->getTranslationWorld();
@@ -336,7 +307,7 @@ void CharacterGame::update(float elapsedTime)
     {
         _characterShadowNode->setTranslation(Vector3(hitResult.point.x, hitResult.point.y + 0.1f, hitResult.point.z));
     }
-
+	
     if (_hasBall)
     {
         // This is the first time entering this block of code if the basketball is still enabled.
@@ -369,6 +340,7 @@ void CharacterGame::update(float elapsedTime)
         }
         _basketballNode->setTranslation(translation.x, _floorLevel, translation.z);
     }
+	
 }
 
 void CharacterGame::render(float elapsedTime)

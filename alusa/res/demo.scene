@@ -1,0 +1,144 @@
+scene
+{
+    path = res/lastentarha.gpb
+
+    
+
+  node boycharacter
+    {
+        collisionObject = res/sample.physics#boy
+    }
+
+	node floor
+	{
+	collisionObject = res/sample.physics#floor
+	}
+	 
+
+	 node tuoli1
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli2
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli3
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli4
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli5
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli6
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+
+	 node tuoli7
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli8
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli9
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli10
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+
+	 node tuoli11
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node tuoli12
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node table
+	 {
+	 collisionObject = res/sample.physics#chair
+	 }
+
+	 node ball
+	 {
+	 collisionObject = res/sample.physics#basketball
+	 }
+
+	node wall1
+	 {
+	 collisionObject = res/sample.physics#floor
+	 }
+
+	 node wall2
+	 {
+	 collisionObject = res/sample.physics#floor
+	 }
+
+	 node wall3
+	 {
+	 collisionObject = res/sample.physics#floor
+	 }
+
+	 node wall4
+	 {
+	 collisionObject = res/sample.physics#floor
+	 }
+
+	 node tableleg1
+	 {
+	 collisionObject = res/sample.physics#table
+	 }
+
+	 node tableleg2
+	 {
+	 collisionObject = res/sample.physics#table
+	 }
+
+	 node tableleg3
+	 {
+	 collisionObject = res/sample.physics#table
+	 }
+
+	 node tableleg4
+	 {
+	 collisionObject = res/sample.physics#table
+	 }
+
+	 node roof
+	 {
+	 collisionObject = res/sample.physics#floor
+	 }
+
+	 node blackboard
+	 {
+	 material = res/lastentarha.material#blackboardcolor
+	 }
+
+    physics
+    {
+        gravity = 0.0, -199.8, 0.0
+    }
+}

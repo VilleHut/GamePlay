@@ -16,15 +16,6 @@
     <None Include="res\demo.fbx">
       <Filter>res</Filter>
     </None>
-    <None Include="res\demo.gpb">
-      <Filter>res</Filter>
-    </None>
-    <None Include="res\demo.material">
-      <Filter>res</Filter>
-    </None>
-    <None Include="res\demo.scene">
-      <Filter>res</Filter>
-    </None>
     <None Include="res\shaders\colored.frag">
       <Filter>res\shaders</Filter>
     </None>
@@ -72,6 +63,21 @@
     </None>
     <None Include="res\shaders\textured.vert">
       <Filter>res\shaders</Filter>
+    </None>
+    <None Include="res\lastentarha.scene">
+      <Filter>res</Filter>
+    </None>
+    <None Include="res\boy.animation">
+      <Filter>res</Filter>
+    </None>
+    <None Include="res\lastentarha.gpb">
+      <Filter>res</Filter>
+    </None>
+    <None Include="res\lastentarha.material">
+      <Filter>res</Filter>
+    </None>
+    <None Include="res\lastentarha.physics">
+      <Filter>res</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

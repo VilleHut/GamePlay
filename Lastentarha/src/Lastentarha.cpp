@@ -10,17 +10,42 @@ Lastentarha::Lastentarha()
 
 void Lastentarha::initialize()
 {
+
     // Load game scene from file
-    _scene = Scene::load("res/demo.scene");
+    _scene = Scene::load("res/lastentarha.scene");
+	// Update the aspect ratio for our scene's camera to match the current device resolution.
+	_scene->getActiveCamera()->setAspectRatio(getAspectRatio());
+	
 
-    // Get the box model and initialize its material parameter values and bindings
-    Node* boxNode = _scene->findNode("box");
-    Model* boxModel = dynamic_cast<Model*>(boxNode->getDrawable());
-    Material* boxMaterial = boxModel->getMaterial();
-
-    // Set the aspect ratio for the scene's camera to match the current resolution
-    _scene->getActiveCamera()->setAspectRatio(getAspectRatio());
+	_scene->visit(this, &Lastentarha::initializeScene);
 }
+
+bool Lastentarha::initializeScene(Node* node)
+{
+	Model* model = dynamic_cast<Model*>(node->getDrawable());
+	if (model && model->getMaterial())
+	{
+		initializeMaterial(_scene, node, model->getMaterial());
+	}
+
+	return true;
+}
+
+void Lastentarha::initializeMaterial(Scene* scene, Node* node, Material* material)
+{
+	// Bind light shader parameters to dynamic objects only
+	if (node->hasTag("dynamic"))
+	{
+		material->getParameter("u_ambientColor")->bindValue(scene, &Scene::getAmbientColor);
+		Node* lightNode = scene->findNode("sun");
+		if (lightNode)
+		{
+			material->getParameter("u_directionalLightColor[0]")->bindValue(lightNode->getLight(), &Light::getColor);
+			material->getParameter("u_directionalLightDirection[0]")->bindValue(lightNode, &Node::getForwardVectorView);
+		}
+	}
+}
+
 
 void Lastentarha::finalize()
 {
@@ -29,8 +54,7 @@ void Lastentarha::finalize()
 
 void Lastentarha::update(float elapsedTime)
 {
-    // Rotate model
-    _scene->findNode("box")->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
+   
 }
 
 void Lastentarha::render(float elapsedTime)
@@ -67,14 +91,8 @@ void Lastentarha::keyEvent(Keyboard::KeyEvent evt, int key)
 
 void Lastentarha::touchEvent(Touch::TouchEvent evt, int x, int y, unsigned int contactIndex)
 {
-    switch (evt)
+   /* switch (evt)
     {
-    case Touch::TOUCH_PRESS:
-        _wireframe = !_wireframe;
-        break;
-    case Touch::TOUCH_RELEASE:
-        break;
-    case Touch::TOUCH_MOVE:
-        break;
-    };
+   
+    };*/
 }

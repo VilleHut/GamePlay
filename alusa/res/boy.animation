@@ -1,0 +1,42 @@
+animation animations
+{
+    frameCount = 101
+
+	clip idle
+    {
+        begin = 1
+        end = 19
+        repeatCount = INDEFINITE
+		loopBlendTime = 0
+        
+    }
+    clip walking
+    {
+        begin = 20
+        end = 35
+        repeatCount = INDEFINITE
+    }
+    clip jump
+    {
+        begin = 36
+        end = 60
+        repeatCount = INDEFINITE
+    }
+   
+  
+    clip running
+    {
+        begin = 65
+        end = 85
+        repeatCount = 1
+    }
+    
+   
+   
+    clip kick
+    {
+        begin = 86
+        end = 100
+        repeatCount = 1
+    }
+}

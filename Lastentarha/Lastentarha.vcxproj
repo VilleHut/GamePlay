@@ -163,10 +163,12 @@ xcopy ..\..\GamePlay\gameplay\res\ui res\ui\* /s /y /d</Command>
     </None>
     <None Include="game.config" />
     <None Include="icon.png" />
+    <None Include="res\boy.animation" />
     <None Include="res\demo.fbx" />
-    <None Include="res\demo.gpb" />
-    <None Include="res\demo.material" />
-    <None Include="res\demo.scene" />
+    <None Include="res\lastentarha.gpb" />
+    <None Include="res\lastentarha.material" />
+    <None Include="res\lastentarha.physics" />
+    <None Include="res\lastentarha.scene" />
     <None Include="res\shaders\colored.frag" />
     <None Include="res\shaders\colored.vert" />
     <None Include="res\shaders\font.frag" />

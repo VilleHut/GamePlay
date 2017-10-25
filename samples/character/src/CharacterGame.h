@@ -111,7 +111,7 @@ private:
     bool* _buttonPressed;
     Vector2 _currentDirection;
     Gamepad* _gamepad;
-
+	Node* _characterAnimationNode;
 };
 
 #endif

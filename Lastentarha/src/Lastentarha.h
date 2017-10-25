@@ -54,10 +54,15 @@ private:
     /**
      * Draws the scene each frame.
      */
-    bool drawScene(Node* node);
+	Scene* _scene;
 
-    Scene* _scene;
+	Node* _cameraNode;
+
+
+	bool initializeScene(Node* node);
+	void initializeMaterial(Scene* scene, Node* node, Material* material);
     bool _wireframe;
+	bool drawScene(Node* node);
 };
 
 #endif

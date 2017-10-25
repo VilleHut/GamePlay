@@ -164,6 +164,8 @@ copy .\game.dxt.config .\game.config</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\..\Lastentarha\res\lastentarha.gpb" />
+    <None Include="..\..\Lastentarha\res\lastentarha.material" />
     <None Include="game.config">
       <SubType>Designer</SubType>
     </None>

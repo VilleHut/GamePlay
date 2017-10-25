@@ -1,0 +1,232 @@
+material colored
+{
+    u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+    
+    renderState
+    {
+        cullFace = true
+        depthTest = true
+    }
+    
+    technique
+    {
+        pass 
+        {
+            vertexShader = res/shaders/colored.vert
+            fragmentShader = res/shaders/colored.frag
+        }
+    }
+}
+
+material textured
+{
+    u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        mipmap = true
+        wrapS = CLAMP
+        wrapT = CLAMP
+        minFilter = LINEAR_MIPMAP_LINEAR
+        magFilter = LINEAR
+    }
+
+    renderState
+    {
+        cullFace = true
+        depthTest = true
+    }
+    
+    technique
+    {
+        pass 
+        {
+            vertexShader = res/shaders/textured.vert
+            fragmentShader = res/shaders/textured.frag
+        }
+    }
+}
+
+material blackboardcolor : colored
+{
+    u_diffuseColor = 0, 0.03, 0.001154, 1
+    
+}
+
+material doorcolor : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = D:\GAMEPLAY3D\GamePlay\testing\res\doorcolor.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material doorknobcolor : colored
+{
+    u_ambientColor = 0.564935, 0.564935, 0.564935
+    u_cameraPosition = CAMERA_WORLD_POSITION
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    u_specularExponent = 2.21303
+    
+    technique
+    {
+        pass 
+        {
+            defines = SPECULAR
+        }
+    }
+}
+
+material eyecolor : colored
+{
+    u_matrixPalette = MATRIX_PALETTE
+    
+    technique
+    {
+        pass 
+        {
+            defines = SKINNING;SKINNING_JOINT_COUNT 19
+        }
+    }
+}
+
+material eyewhite : colored
+{
+    u_diffuseColor = 1, 1, 1, 1
+    u_matrixPalette = MATRIX_PALETTE
+    
+    technique
+    {
+        pass 
+        {
+            defines = SKINNING;SKINNING_JOINT_COUNT 19
+        }
+    }
+}
+
+material handcolor : colored
+{
+    u_ambientColor = 0.181818, 0.181818, 0.181818
+    u_diffuseColor = 0.311688, 0.311688, 0.311688, 1
+    u_matrixPalette = MATRIX_PALETTE
+    
+    technique
+    {
+        pass 
+        {
+            defines = SKINNING;SKINNING_JOINT_COUNT 19
+        }
+    }
+}
+
+material lambert1 : textured
+{
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        path = D:\GAMEPLAY3D\GamePlay\testing\res\seamless.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material pallocolor : colored
+{
+    u_diffuseColor = 0.7618, 0, 0.5648, 1
+    
+}
+
+material pants : colored
+{
+    u_diffuseColor = 0, 0, 0.422, 1
+    u_matrixPalette = MATRIX_PALETTE
+    
+    technique
+    {
+        pass 
+        {
+            defines = SKINNING;SKINNING_JOINT_COUNT 19
+        }
+    }
+}
+
+material roofcolor : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = Seamless wall white paint stucco plaster texture.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material shirt : colored
+{
+    u_diffuseColor = 0.4225, 0.1517, 0, 1
+    u_matrixPalette = MATRIX_PALETTE
+    
+    technique
+    {
+        pass 
+        {
+            defines = SKINNING;SKINNING_JOINT_COUNT 19
+        }
+    }
+}
+
+material skincolor : colored
+{
+    u_diffuseColor = 0.5, 0.361252, 0.2595, 1
+    u_matrixPalette = MATRIX_PALETTE
+    
+    technique
+    {
+        pass 
+        {
+            defines = SKINNING;SKINNING_JOINT_COUNT 19
+        }
+    }
+}
+
+material tuolicolor : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = D:\GAMEPLAY3D\GamePlay\testing\res\doorcolor.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material wallcolor : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = Seamless wall white paint stucco plaster texture.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material windowcolor : colored
+{
+    u_diffuseColor = 0.497758, 0.497758, 0.497758, 1
+    u_specularExponent = 2.15248
+    
+    technique
+    {
+        pass 
+        {
+            defines = SPECULAR
+        }
+    }
+}
+

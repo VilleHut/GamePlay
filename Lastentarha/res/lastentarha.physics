@@ -1,0 +1,6 @@
+collisionObject camera
+{
+    type = GHOST_OBJECT
+    shape = SPHERE
+    radius = 0.5
+}

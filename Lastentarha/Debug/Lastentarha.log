@@ -1,22 +1,5 @@
-﻿  ..\..\GamePlay\gameplay\res\shaders\colored.frag
-  ..\..\GamePlay\gameplay\res\shaders\colored.vert
-  ..\..\GamePlay\gameplay\res\shaders\font.frag
-  ..\..\GamePlay\gameplay\res\shaders\font.vert
-  ..\..\GamePlay\gameplay\res\shaders\lighting.frag
-  ..\..\GamePlay\gameplay\res\shaders\lighting.vert
-  ..\..\GamePlay\gameplay\res\shaders\skinning-none.vert
-  ..\..\GamePlay\gameplay\res\shaders\skinning.vert
-  ..\..\GamePlay\gameplay\res\shaders\sprite.frag
-  ..\..\GamePlay\gameplay\res\shaders\sprite.vert
-  ..\..\GamePlay\gameplay\res\shaders\terrain.frag
-  ..\..\GamePlay\gameplay\res\shaders\terrain.vert
-  ..\..\GamePlay\gameplay\res\shaders\textured.frag
-  ..\..\GamePlay\gameplay\res\shaders\textured.vert
-  14 File(s) copied
-  ..\..\GamePlay\gameplay\res\ui\arial.gpb
-  ..\..\GamePlay\gameplay\res\ui\default-theme.png
-  ..\..\GamePlay\gameplay\res\ui\default.theme
-  3 File(s) copied
+﻿  0 File(s) copied
+  0 File(s) copied
   Lastentarha.cpp
      Creating library Debug\Lastentarha.lib and object Debug\Lastentarha.exp
 gameplay-deps.lib(zutil.obj) : warning LNK4099: PDB 'zlibstatic.pdb' was not found with 'gameplay-deps.lib(zutil.obj)' or at 'D:\GAMEPLAY3D\GamePlay\Lastentarha\Debug\zlibstatic.pdb'; linking object as if no debug info

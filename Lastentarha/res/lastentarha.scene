@@ -1,0 +1,25 @@
+scene
+{
+    path = res/demo.gpb
+
+    ambientColor = 1, 1, 1
+
+
+	
+	 node camera
+    {
+        collisionObject = res/lastentarha.physics#camera
+    }
+	
+	
+
+
+
+
+
+    
+    physics
+    {
+        gravity = 0.0, -9.8, 0.0
+    }
+}
